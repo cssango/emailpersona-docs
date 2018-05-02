@@ -1,3 +1,3 @@
-* [Photo](photo.md)
 * [Profile](profile.md)
+* [Photo](photo.md)
 * [Validate](validate.md)

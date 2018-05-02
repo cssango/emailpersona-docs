@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>Email Persona - API Documentation</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700" >
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700,900" >
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" >
   <style type="text/css">
     body {
@@ -14,21 +14,55 @@
       color: #555;
       font-family: 'Lato', sans-serif;
     }
-    body.sticky .sidebar {
-      position: absolute;
-      min-height: 100vh;
-      height: 100%;
-    }
     header {
       height: 80px;
       background-color: #fff;
-      border-bottom: solid 1px #efefef;
+      box-shadow: 0 0 0 1px rgba(1,1,1,.06), 0 1px 3px 0 rgba(1,1,1,.1);
+      padding-top: 20px;
+      padding-bottom: 20px;
     }
-    main {
+    header .logo .light{
+      font-weight: 400;
+    }
+    header .logo {
+      font-weight: 900;
+      letter-spacing: -.4px;
+      color: #101010;
+      font-size: 28px;
+      line-height: 1 ;
+      display: inline-block;
+      text-decoration: none;
+      margin-left: 15px;
+    }
+    .logo-img {
+      width: 25px;
+      height: 25px;
+      float: left;
+      margin-top: 4px; 
+      margin-right: 5px;
+    }
+    header .logo:hover {
+      text-decoration: none;
+    }
+    body.sticky header .sidebar-toggle {
+      position: absolute;
+      top: 0;
+      width: 40px;
+      display: inline-block; 
+      padding: 10px;
+      right: 0;
+      left: auto;
+      cursor: pointer;
+    }
+    main, .container {
       max-width: 990px;
       margin-left: auto;
       margin-right: auto;
+      position: relative;
     } 
+    main .sidebar-toggle {
+      display: none !important;
+    }
     .markdown-section h1 {
       font-size: 42px;
     }
@@ -36,30 +70,63 @@
       font-size: 28px;
     }
     .markdown-section {
-      padding-left: 100px;
-    }
-    @media screen and (max-width: 768px) {
-      .markdown-section {
         padding-left: 20px;
         padding-right: 20px;
-      }
+    }
+    body.close .markdown-section {
+      padding-left: 20px;
     }
     .docsify-copy-code-button, .docsify-copy-code-button:after {
-    top: auto !important;
-    bottom: 0;
+      top: auto !important;
+      bottom: 0;
     }
+    h1 .anchor span,
+    h2 .anchor span {
+      color: #000;
+    }
+
+    @media screen and (min-width: 768px) {
+      .markdown-section {
+        padding-left: 100px;
+      }
+      body.sticky header .sidebar-toggle {
+        display: none;
+      }
+      body.sticky .sidebar { 
+        position: relative;
+        min-height: 100vh;
+        height: 100%;
+        background-color: transparent;
+      }
+      body.close .sidebar {
+        visibility: hidden;
+      }
+    }
+
   </style>
 </head>
 <body>
   <header>
-    Logo
+    <div class="container">
+      <button class="sidebar-toggle">
+        <div class="sidebar-toggle-button">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <a href="https://emailperona.net" class="logo">
+        <img src="images/logo.svg" class="logo-img"> 
+        <span class="light">email</span>persona
+      </a>
+    </div>
   </header>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '',
       repo: '',
-      loadSidebar: true
+      loadSidebar: true,
+      themeColor: '#3F51B5'
     };
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
